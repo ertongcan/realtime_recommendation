@@ -5,7 +5,12 @@
 ### Installation
 
 ```sh
-$ docker-compose up -d
+cd <PROJECT_FOLDER>
+docker-compose -f docker-compose.yml up -d
+
+to tear down docker RUN:
+docker-compose -f docker-compose.yml down
+
 ```
 
 #### It will start producing the messages and push to the kafka
