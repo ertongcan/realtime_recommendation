@@ -1,4 +1,4 @@
-# Kafka Producer and Consumer using docker and docker-compose example
+# Realtime Recommendation Service
 
 - Running the kafka and zookeeper on the docker container
 
