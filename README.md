@@ -1,7 +1,5 @@
 # Realtime Recommendation Service
 
-- Running the kafka and zookeeper on the docker container
-
 ### Installation
 
 ```sh
