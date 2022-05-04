@@ -36,4 +36,4 @@ $ ./build.sh
 $ ./start.sh
 ```
 
-#### for db tables please run table.sql
+#### for db tables please run tables.sql
