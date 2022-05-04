@@ -40,5 +40,10 @@ $ cd api
 $ ./build.sh
 $ ./start.sh
 ```
-
+#### ENDPOINTS
+```sh
+/browse_history/<string:user_id>
+/delete_history/<string:user_id>/<string:product_id>
+/best_seller_products/<string:user_id>
+```
 #### for db tables please run tables.sql
