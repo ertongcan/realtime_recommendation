@@ -42,17 +42,15 @@ def browse_history(user_id):
                 qSelect = """ select * from user_views uv where uv.user_id = %s ORDER BY user_event_date DESC;"""
                 cursor.execute(qSelect, (user_id,))
                 history = cursor.fetchall()
+                json_res = {'user_id': user_id, 'products': [p['product_id'] for p in history],
+                            'type': 'personalized'}
 
             except (Exception) as error:
                 db_instance.rollback()
-                raise Exception(f"DB update failed. Reason: {error}")
+                return make_response(jsonify(f"DB failed - {error}"), 200)
             finally:
                 cursor.close()
                 db_instance.commit()
-
-    json_res = {'user_id': user_id, 'products': [p['product_id'] for p in history],
-                'type': 'personalized'}
-
     return make_response(jsonify(json_res), 200)
 
 @app.route('/best_seller_products/<string:user_id>', methods=['GET'])
