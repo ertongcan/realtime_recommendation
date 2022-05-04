@@ -30,7 +30,7 @@ $ ./start.sh
 #### ETL process to create warehouse table
 
 ```sh
-for env values please COPY .env_sample TO .env
+env values please COPY .env_sample TO .env
 $ cd etl
 $ ./build.sh
 $ ./start.sh
@@ -38,7 +38,7 @@ $ ./start.sh
 
 #### API to use recommendation service
 ```sh
-for env values please COPY .env_sample TO .env
+env values please COPY .env_sample TO .env
 $ cd api
 $ ./build.sh
 $ ./start.sh
