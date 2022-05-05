@@ -17,7 +17,7 @@ def index():
     return ''
 
 @app.route('/delete_history/<string:user_id>/<string:product_id>', methods=['DELETE'])
-def browse_history(user_id, product_id):
+def delete_history(user_id, product_id):
     db_instance = app.config['db'] if 'db' in app.config else None
 
     if db_instance:
