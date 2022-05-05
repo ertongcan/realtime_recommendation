@@ -16,7 +16,7 @@ app.config['db'] = connect(
 def index():
     return ''
 
-@app.route('/browse_history/<string:user_id>/<string:product_id>')
+@app.route('/delete_history/<string:user_id>/<string:product_id>', methods=['DELETE'])
 def browse_history(user_id, product_id):
     db_instance = app.config['db'] if 'db' in app.config else None
 
