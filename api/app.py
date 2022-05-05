@@ -24,7 +24,7 @@ def delete_history(user_id, product_id):
         with db_instance.cursor() as cursor:
             try:
                 qSelect = """ DELETE from user_views WHERE user_id=%s and product_id=%s """
-                cursor.execute(qSelect, (user_id,))
+                cursor.execute(qSelect, (user_id,product_id, ))
             except (Exception) as error:
                 db_instance.rollback()
                 raise Exception(f"DB operation failed. Reason: {error}")
