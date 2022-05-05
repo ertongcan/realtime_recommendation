@@ -1,11 +1,14 @@
-# Kafka Producer and Consumer using docker and docker-compose example
-
-- Running the kafka and zookeeper on the docker container
+# Realtime Recommendation Service
 
 ### Installation
 
 ```sh
-$ docker-compose up -d
+cd <PROJECT_FOLDER>
+docker-compose -f docker-compose.yml up -d
+
+to tear down docker RUN:
+docker-compose -f docker-compose.yml down
+
 ```
 
 #### It will start producing the messages and push to the kafka
@@ -23,7 +26,9 @@ $ ./start.sh
 ```
 
 #### ETL process to create warehouse table
+
 ```sh
+env values - COPY .env_sample TO .env
 $ cd etl
 $ ./build.sh
 $ ./start.sh
@@ -31,9 +36,15 @@ $ ./start.sh
 
 #### API to use recommendation service
 ```sh
+env values -  COPY .env_sample TO .env
 $ cd api
 $ ./build.sh
 $ ./start.sh
 ```
-
-#### for db tables please run table.sql
+#### ENDPOINTS
+```sh
+/browse_history/<string:user_id>
+/delete_history/<string:user_id>/<string:product_id>
+/best_seller_products/<string:user_id>
+```
+#### for db tables please run tables.sql
